@@ -1,14 +1,20 @@
 # News
 
-
-
-[ Translation(s) ](/DebianWiki/EditorGuide#translation) : [ English ](/News)
-\- [ Español ](/es/News) \- [ فارسی(Persian) ](/fa/News) \- [ Français
-](/fr/News) \- [ Italiano ](/it/News) \- [ 日本語(Nihongo) ](/ja/News) \- [ 한국어
-](/ko/News) \- [ Polski ](/pl/Wiadomo%C5%9Bci) \- [ Português (Brasil)
-](/pt_BR/News) \- [ Português (Portugal) ](/pt_PT/News) \- [ Русский
-](/ru/News) \- [ Svenska ](/sv/News) \- [ Українська ](/uk/News) \- [ tiếng
-Việt ](/vi/News) \- [ 简体中文 ](/zh_CN/News)
+[ Translation(s) ](https://wiki.debian.org/DebianWiki/EditorGuide#translation)
+: [ English ](https://wiki.debian.org/News) \- [ Español
+](https://wiki.debian.org/es/News) \- [ فارسی(Persian)
+](https://wiki.debian.org/fa/News) \- [ Français
+](https://wiki.debian.org/fr/News) \- [ Italiano
+](https://wiki.debian.org/it/News) \- [ 日本語(Nihongo)
+](https://wiki.debian.org/ja/News) \- [ 한국어 ](https://wiki.debian.org/ko/News)
+\- [ Polski ](https://wiki.debian.org/pl/Wiadomo%C5%9Bci) \- [ Português
+(Brasil) ](https://wiki.debian.org/pt_BR/News) \- [ Português (Portugal)
+](https://wiki.debian.org/pt_PT/News) \- [ Русский
+](https://wiki.debian.org/ru/News) \- [ Svenska
+](https://wiki.debian.org/sv/News) \- [ Українська
+](https://wiki.debian.org/uk/News) \- [ tiếng Việt
+](https://wiki.debian.org/vi/News) \- [ 简体中文
+](https://wiki.debian.org/zh_CN/News)
 
 * * *
 
@@ -19,7 +25,7 @@ Debian has several news feeds, that can be interesting for different
 
   * [ Latest News ](https://www.debian.org/News) \- Major news and changes (10-30 per year) 
 
-  * [ Debian Project News ](https://www.debian.org/News/project/) \- A newsletter for the Debian community ( [ contribute ](/ProjectNews) ) 
+  * [ Debian Project News ](https://www.debian.org/News/project/) \- A newsletter for the Debian community ( [ contribute ](https://wiki.debian.org/ProjectNews) ) 
 
   * [ debian-security-announce ](https://www.debian.org/security/#DSAS) \- Security advisories about Debian packages 
 
@@ -30,9 +36,9 @@ Debian has several news feeds, that can be interesting for different
     
 
 Current issues regarding Debian Project and Debian/ [ Unstable
-](/DebianUnstable) .  
+](https://wiki.debian.org/DebianUnstable) .  
 [ #debian-devel ](ircs://irc.debian.org/#debian-devel) topic is also available
-at [ DevelopersCorner ](/DevelopersCorner) .
+at [ DevelopersCorner ](https://wiki.debian.org/DevelopersCorner) .
 
 debian-devel-announce
 
@@ -41,21 +47,21 @@ debian-devel-announce
 Announcements for _"developers"_ (like policy changes, important release
 issues, teams news).  
 [ debian-devel-announce ](https://lists.debian.org/debian-devel-announce
-"DebianList") ( [ contribute ](/DeveloperNews) ).
+"DebianList") ( [ contribute ](https://wiki.debian.org/DeveloperNews) ).
 
 ##  See also
 
   * [ debian-infrastructure-announce ](https://lists.debian.org/debian-infrastructure-announce/ "DebianList") \- Changes in the Debian infrastructure and services. 
 
-  * [ Press coverage ](/PressCoverage) \- Debian in the press 
+  * [ Press coverage ](https://wiki.debian.org/PressCoverage) \- Debian in the press 
 
-  * [ Events ](/DebianEvents) and [ https://www.debian.org/events/ ](https://www.debian.org/events/)
+  * [ Events ](https://wiki.debian.org/DebianEvents) and [ https://www.debian.org/events/ ](https://www.debian.org/events/)
 
   * [ https://www.spi-inc.org/ ](https://www.spi-inc.org/) \- News from _Software in the Public Interest_ , a non-profit organization that supports Debian and other software projects 
 
 * * *
 
-[ Community ](/Community)
+[ Community ](https://wiki.debian.org/Community)
 
 
 
