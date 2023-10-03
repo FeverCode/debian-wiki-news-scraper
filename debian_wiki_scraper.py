@@ -15,10 +15,13 @@ if response.status_code == 200:
 
     # Find the content div on the page
     if (content_div := soup.find(id='content')):
+       
         # Preprocess the links to make them absolute
         for a in content_div.find_all('a'):
             if a.has_attr('href') and a['href'].startswith('/'):
+                # Only prefix the base URL for relative links
                 a['href'] = 'https://wiki.debian.org' + a['href']
+
 
         # Convert the modified HTML to markdown
         converter = html2text.HTML2Text()
