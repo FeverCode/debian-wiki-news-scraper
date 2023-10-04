@@ -11,7 +11,7 @@ This Python script allows you to scrape the latest articles and links from the D
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/debian-wiki-news-scraper.git
+   git clone https://github.com/FeverCode/debian-wiki-news-scraper.git
 
 2. Navigate to the project directory:
 
