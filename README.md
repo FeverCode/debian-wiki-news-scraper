@@ -15,36 +15,57 @@ This Python script allows you to scrape the latest articles and links from the D
 
 2. Navigate to the project directory:
 
-    ```bash
+    ```
     cd debian-wiki-news-scraper
+    ```
 
 3. Create and activate a virtual environment (venv) to 
     isolate project dependecies:     
     
-    ```bash
+    ```
     python -m venv venv
     
     source venv/bin/activate
+    ```
+    On windows use
+
+    ```
+    venv/Scripts/activate
+    ```
 
 4. Install the required Python packages:
 
-    ```bash
+    ```
     pip install -r requirements.txt
+    ```
 
 ## Usage
 
 * To run the Debian Wiki News scraper, execute the following command:
 
-    ```bash
+    ```
     python debian_wiki_scraper.py
+    ```
 
-The script will create a new file named `debian_news.md` in the project directory. The file will contain the latest news and announcements from the Debian community in Markdown format.
+* The script will create a new file named `debian_news.md` in the project directory. The file will contain the latest news and announcements from the Debian community in Markdown format.
+## Running Tests Cases
+
+* To test the functions and ensure everything is working correctly execute the following command:
+
+    ```
+    python -m unittest
+    ```
 
 ## Deactivating the Virtual Environment
 * When you're done using the script, you can deactivate the virtual environment with the following command:
 
-    ```bash
+    ```
     deactivate
+    ```
+
+## Continuous Integration
+
+* This project uses GitHub Actions for continuous integration. Every push to the repository runs the tests and generates the `debian_news.md` file.
 
 ## License
 
