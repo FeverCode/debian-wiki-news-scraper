@@ -1,0 +1,30 @@
+name: Test and Generate Markdown
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests bs4 html2text
+    - name: Run tests
+      run: |
+        python test_scraper.py
+    - name: Generate Markdown
+      run: |
+        python debian_wiki_scraper.py
+    - name: Commit and push if changed
+      run: |
+        git diff
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -am "Generate markdown" || exit 0
+        git push
