@@ -67,8 +67,9 @@ issues, teams news).
 
 
 
-News ( [ last modified 2022-07-03 11:56:53 ](/News?action=info) )
+News ( [ last modified 2022-07-03 11:56:53
+](https://wiki.debian.org/News?action=info) )
 
-  * Debian [ privacy policy ](https://www.debian.org/legal/privacy) , Wiki [ team ](/Teams/DebianWiki) , [ bugs ](https://bugs.debian.org/wiki.debian.org) and [ config ](https://salsa.debian.org/debian/wiki.debian.org) . 
+  * Debian [ privacy policy ](https://www.debian.org/legal/privacy) , Wiki [ team ](https://wiki.debian.org/Teams/DebianWiki) , [ bugs ](https://bugs.debian.org/wiki.debian.org) and [ config ](https://salsa.debian.org/debian/wiki.debian.org) . 
   * Powered by [ MoinMoin ](https://moinmo.in/ "This site uses the MoinMoin Wiki software.") and [ Python ](https://moinmo.in/Python "MoinMoin is written in Python.") , with hosting provided by [ Metropolitan Area Network Darmstadt ](https://www.man-da.de/) . 
 
