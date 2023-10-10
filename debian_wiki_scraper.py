@@ -2,45 +2,46 @@ import requests
 from bs4 import BeautifulSoup
 import html2text
 
-# Define the URL of the Debian Wiki News page
-debian_wiki_url = 'https://wiki.debian.org/News'
+BASE_URL = 'https://wiki.debian.org'
 
-# Send an HTTP GET request to the URL
-response = requests.get(debian_wiki_url)
+def fetch_page_content(url):
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise ValueError("Failed to fetch the page content.")
+    return response.text
 
-# Function to update relative links to absolute ones
 def update_links(element):
     for a in element.find_all('a'):
         if a.has_attr('href') and a['href'].startswith('/'):
-            # Only prefix the base URL for relative links
-            a['href'] = 'https://wiki.debian.org' + a['href']
+            a['href'] = BASE_URL + a['href']
 
-# Check if the request was successful
-if response.status_code == 200:
-    # Parse the HTML content of the page using BeautifulSoup
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # Find the content div on the page and update its links
-    if (content_div := soup.find(id='content')):
-        update_links(content_div)
-
-    # Extract the footer content and update its links
+def extract_content_and_footer(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    content = soup.find(id='content')
     footer = soup.find(id='footer')
-    if footer:
-        update_links(footer)
+    return content, footer
 
-    # Convert the modified HTML to markdown
+def convert_to_markdown(content, footer):
     converter = html2text.HTML2Text()
-    markdown_content = converter.handle(content_div.prettify())
+    markdown_content = converter.handle(content.prettify())
     markdown_footer = converter.handle(footer.prettify())
+    return markdown_content, markdown_footer
 
-    # Write the Markdown content to a file
-    with open('debian_news.md', 'w', encoding='utf-8') as file:
+def save_to_file(markdown_content, markdown_footer, filename='debian_news.md'):
+    with open(filename, 'w', encoding='utf-8') as file:
         file.write('# News\n\n')
         file.write(markdown_content)
         file.write('\n\n')
         file.write(markdown_footer)
-            
-    print('Debian News page has been successfully converted to Markdown and saved to debian_news.md.')
-else:
-    print('Failed to fetch the Debian News page.')
+
+def main():
+    html_content = fetch_page_content(f"{BASE_URL}/News")
+    content, footer = extract_content_and_footer(html_content)
+    update_links(content)
+    update_links(footer)
+    markdown_content, markdown_footer = convert_to_markdown(content, footer)
+    save_to_file(markdown_content, markdown_footer)
+    print("Markdown file saved successfully!")
+
+if __name__ == '__main__':
+    main()
