@@ -14,7 +14,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests bs4 html2text
+        pip install -r requirements.txt
     - name: Run tests
       run: |
         python test_scraper.py

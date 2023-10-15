@@ -8,12 +8,27 @@ from debian_wiki_scraper import (
 )
 from bs4 import BeautifulSoup
 import os
+from unittest.mock import patch, Mock
 
 class TestScraperFunctions(unittest.TestCase):
 
+    def setUp(self):
+        # Create a mock response for requests.get
+        self.mock_response = Mock()
+        self.mock_response.status_code = 200
+        self.mock_response.text = "Mocked content"
+        self.test_filename = 'test_output.md'
+
+    def tearDown(self):
+        # Clean up any test file created
+        if os.path.exists(self.test_filename):
+            os.remove(self.test_filename)
+
     def test_fetch_page_content(self):
-        content = fetch_page_content('https://www.example.com')
-        self.assertTrue(content)
+        with patch('requests.get', return_value=self.mock_response):
+            content = fetch_page_content('https://www.example.com')
+            self.assertTrue(content)
+            self.assertEqual(content, "Mocked content")
 
     def test_update_links(self):
         soup = BeautifulSoup("<a href='/link'>Link</a>", 'html.parser')
@@ -35,13 +50,11 @@ class TestScraperFunctions(unittest.TestCase):
     def test_save_to_file(self):
         test_content = "Test Content"
         test_footer = "Test Footer"
-        test_filename = 'test_output.md'
-        save_to_file(test_content, test_footer, test_filename)
-        with open(test_filename, 'r', encoding='utf-8') as file:
+        save_to_file(test_content, test_footer, self.test_filename)
+        with open(self.test_filename, 'r', encoding='utf-8') as file:
             content = file.read()
         self.assertIn(test_content, content)
         self.assertIn(test_footer, content)
-        os.remove(test_filename)  # Clean up test file
 
 if __name__ == '__main__':
     unittest.main()
