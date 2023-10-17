@@ -13,11 +13,18 @@ from unittest.mock import patch, Mock
 class TestScraperFunctions(unittest.TestCase):
 
     def setUp(self):
-        # Create a mock response for requests.get
-        self.mock_response = Mock()
-        self.mock_response.status_code = 200
-        self.mock_response.text = "Mocked content"
+        # Mock response for 404 status code
+        self.mock_response_404 = self.create_mock_response(404, "Page Not Found")
+
+        # Mock response for requests.get
+        self.mock_response = self.create_mock_response(200, "Mocked content")
         self.test_filename = 'test_output.md'
+
+    def create_mock_response(self, status_code, text):
+        mock_response = Mock()
+        mock_response.status_code = status_code
+        mock_response.text = text
+        return mock_response
 
     def tearDown(self):
         # Clean up any test file created
@@ -55,6 +62,13 @@ class TestScraperFunctions(unittest.TestCase):
             content = file.read()
         self.assertIn(test_content, content)
         self.assertIn(test_footer, content)
+
+
+    def test_fetch_page_content_404_status(self):
+        with patch('requests.get', return_value=self.mock_response_404):
+            with self.assertRaises(ValueError):
+                fetch_page_content('https://www.example.com')
+
 
 if __name__ == '__main__':
     unittest.main()
